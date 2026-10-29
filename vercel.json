@@ -1,0 +1,55 @@
+{
+    "rewrites": [
+        {
+            "source": "/api/:path*",
+            "destination": "https://YOUR-API-HOST/api/:path*"
+        },
+        {
+            "source": "/sitemap.xml",
+            "destination": "https://YOUR-API-HOST/seo/sitemap.xml"
+        },
+        {
+            "source": "/bhandaras/:slug",
+            "has": [
+                {
+                    "type": "header",
+                    "key": "user-agent",
+                    "value": ".*(Googlebot|googlebot|bingbot|Bingbot|facebookexternalhit|Twitterbot|WhatsApp|LinkedInBot|Slackbot|TelegramBot|Discordbot|Applebot|DuckDuckBot|Pinterestbot).*"
+                }
+            ],
+            "destination": "https://YOUR-API-HOST/seo/bhandaras/:slug"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
+        }
+    ],
+    "headers": [
+        {
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "key": "Referrer-Policy",
+                    "value": "strict-origin-when-cross-origin"
+                },
+                {
+                    "key": "Cross-Origin-Opener-Policy",
+                    "value": "same-origin-allow-popups"
+                }
+            ]
+        },
+        {
+            "source": "/sw.js",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "no-cache"
+                }
+            ]
+        }
+    ]
+}

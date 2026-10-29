@@ -1,0 +1,52 @@
+{
+    "brand": {
+        "tagline": "Find Bhandaras. Share Seva. Spread Happiness."
+    },
+    "nav": {
+        "home": "Home",
+        "find": "Find Bhandara",
+        "about": "About",
+        "post": "Post a Bhandara",
+        "login": "Log in",
+        "signup": "Sign up",
+        "dashboard": "Dashboard",
+        "logout": "Log out",
+        "language": "Language"
+    },
+    "a11y": {
+        "mainNav": "Main",
+        "mobileNav": "Mobile",
+        "openMenu": "Open menu",
+        "closeMenu": "Close menu",
+        "social": "Social links"
+    },
+    "footer": {
+        "explore": "Explore",
+        "community": "Community",
+        "legal": "Legal",
+        "findLink": "Find a Bhandara",
+        "postLink": "Post a Bhandara",
+        "how": "How it works",
+        "about": "About",
+        "guidelines": "Community guidelines",
+        "contact": "Contact",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Use",
+        "made": "Made with seva in India."
+    },
+    "home": {
+        "badge": "Community food seva across India",
+        "intro": "Discover bhandaras, langars and free community meals near you, or share the one you are organizing so everyone can join.",
+        "popularCities": "Popular cities"
+    },
+    "auth": {
+        "loginTitle": "Log in",
+        "loginSubtitle": "Welcome back. Log in to post and manage bhandaras.",
+        "email": "Email",
+        "password": "Password",
+        "forgot": "Forgot password?",
+        "newHere": "New here?",
+        "createAccount": "Create an account",
+        "welcomeBack": "Welcome back, {{name}}!"
+    }
+}

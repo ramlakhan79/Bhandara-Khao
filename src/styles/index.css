@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --toast-bg: #ffffff;
+    --toast-fg: #1c1917;
+    --toast-border: #e7e5e4;
+}
+
+.dark {
+    --toast-bg: #1c1917;
+    --toast-fg: #f5f5f4;
+    --toast-border: #44403c;
+}
+
+@layer base {
+    html {
+        -webkit-text-size-adjust: 100%;
+        scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+
+    body {
+        @apply bg-stone-50 text-stone-900 antialiased dark:bg-stone-950 dark:text-stone-100;
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    :focus-visible {
+        @apply outline-none ring-2 ring-brand-600 ring-offset-2 ring-offset-white dark:ring-brand-400 dark:ring-offset-stone-950;
+    }
+
+    img {
+        @apply max-w-full;
+    }
+}
+
+@layer components {
+    .container-page {
+        @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+    }
+
+    .card {
+        @apply rounded-2xl border border-stone-200 bg-white shadow-soft dark:border-stone-800 dark:bg-stone-900;
+    }
+
+    .skip-link {
+        @apply absolute left-3 top-3 z-[100] -translate-y-24 rounded-lg bg-brand-700 px-4 py-2 font-semibold text-white focus:translate-y-0;
+    }
+
+    .link {
+        @apply font-medium text-brand-700 underline-offset-2 hover:underline dark:text-brand-400;
+    }
+}
+
+/* ---------- Leaflet ---------- */
+.leaflet-container {
+    z-index: 0;
+    font-family: inherit;
+    background: #e7e5e4;
+}
+
+.bk-pin {
+    background: transparent;
+    border: 0;
+}
+
+.dark .leaflet-container {
+    background: #292524;
+}
+
+.dark .bk-map .leaflet-tile-pane {
+    filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(0.9);
+}
+
+.dark .leaflet-popup-content-wrapper,
+.dark .leaflet-popup-tip {
+    background: #1c1917;
+    color: #f5f5f4;
+}
+
+.dark .leaflet-container a.leaflet-popup-close-button {
+    color: #d6d3d1;
+}
+
+.leaflet-popup-content {
+    margin: 12px 14px;
+}
