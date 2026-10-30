@@ -1,6 +1,7 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Clock, MapPin, Search, Utensils } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { bhandaraService } from '../services/bhandaraService.js';
 import { useDebounce } from '../hooks/useDebounce.js';
 import { useClickOutside } from '../hooks/useClickOutside.js';
@@ -9,6 +10,7 @@ import Button from './ui/Button.jsx';
 import { cx } from '../utils/cx.js';
 
 export default function SearchBar({ className, placeholder = 'Search by city, area, pincode or bhandara name' }) {
+    const { t } = useTranslation();
     const navigate = useNavigate();
     const listId = useId();
     const boxRef = useRef(null);
@@ -96,14 +98,14 @@ export default function SearchBar({ className, placeholder = 'Search by city, ar
                         aria-activedescendant={active >= 0 ? `${listId}-${active}` : undefined}
                         autoComplete="off"
                         value={value}
-                        placeholder={placeholder}
+                        placeholder={t('home.searchPlaceholder')}
                         onChange={(e) => { setValue(e.target.value); setOpen(true); }}
                         onFocus={() => setOpen(true)}
                         onKeyDown={onKeyDown}
                         className="block min-h-[52px] w-full rounded-xl border border-stone-300 bg-white py-3 pl-11 pr-3 text-base text-stone-900 placeholder:text-stone-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-100 dark:placeholder:text-stone-400 dark:focus-visible:ring-brand-400"
                     />
                 </div>
-                <Button type="submit" size="lg" className="sm:min-w-[120px]">Search</Button>
+                <Button type="submit" size="lg" className="sm:min-w-[120px]">{t('home.searchButtton')}</Button>
             </div>
 
             {showList && (

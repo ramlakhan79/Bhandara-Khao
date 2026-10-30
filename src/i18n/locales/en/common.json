@@ -37,7 +37,15 @@
     "home": {
         "badge": "Community food seva across India",
         "intro": "Discover bhandaras, langars and free community meals near you, or share the one you are organizing so everyone can join.",
-        "popularCities": "Popular cities"
+        "popularCities": "Popular cities",
+        "searchButtton": "Search",
+        "searchPlaceholder": "Search by city, area, pincode or bhandara name",
+        "findDescription": "Search and filter community meals and food seva events."        
+    },
+    "buttonText": {
+        "search": "Search",
+        "filter": "Filter",
+        "clearFilters": "Clear all"
     },
     "auth": {
         "loginTitle": "Log in",

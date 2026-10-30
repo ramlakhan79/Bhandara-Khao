@@ -3,6 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { Filter, LayoutGrid, Map as MapIcon, Plus, SearchX, X } from 'lucide-react';
 import toast from 'react-hot-toast';
 import Seo from '../components/Seo.jsx';
+import { useTranslation } from 'react-i18next';
 import FilterPanel from '../components/explore/FilterPanel.jsx';
 import EventCard, { EventCardSkeleton } from '../components/EventCard.jsx';
 import Button from '../components/ui/Button.jsx';
@@ -24,6 +25,7 @@ const LIST_LIMIT = 12;
 const MAP_LIMIT = 100;
 
 export default function Explore() {
+    const { t } = useTranslation();
     const [sp, setSp] = useSearchParams();
     const geo = useGeolocation();
     const topRef = useRef(null);
@@ -142,8 +144,8 @@ export default function Explore() {
             />
 
             <div ref={topRef} className="scroll-mt-20">
-                <h1 className="text-3xl font-extrabold tracking-tight">Find a Bhandara</h1>
-                <p className="mt-1 text-stone-600 dark:text-stone-400">Search and filter community meals and food seva events.</p>
+                <h1 className="text-3xl font-extrabold tracking-tight">{t('footer.findLink')}</h1>
+                <p className="mt-1 text-stone-600 dark:text-stone-400">{t('home.findDescription')}</p>
             </div>
 
             <div className="mt-6 grid gap-8 lg:grid-cols-[280px_1fr]">
@@ -209,7 +211,9 @@ export default function Explore() {
                                 </li>
                             ))}
                             <li>
-                                <button type="button" onClick={clearAll} className="min-h-[36px] px-2 text-sm font-semibold underline">Clear all</button>
+                                <button type="button" onClick={clearAll} className="min-h-[36px] px-2 text-sm font-semibold underline">
+                                    {t('buttonText.clearFilters')}
+                                </button>
                             </li>
                         </ul>
                     )}
@@ -248,7 +252,7 @@ export default function Explore() {
                                     action={
                                         <div className="flex flex-wrap justify-center gap-3">
                                             {hasFilters && <Button variant="secondary" onClick={clearAll}>Clear filters</Button>}
-                                            <Button as={Link} to="/bhandaras/create"><Plus className="h-4 w-4" aria-hidden="true" /> Post a Bhandara</Button>
+                                            <Button as={Link} to="/bhandaras/create"><Plus className="h-4 w-4" aria-hidden="true" />{t('footer.postLink')}</Button>
                                         </div>
                                     }
                                 />
