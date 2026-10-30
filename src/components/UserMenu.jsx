@@ -7,7 +7,7 @@ import { useClickOutside } from '../hooks/useClickOutside.js';
 import Avatar from './ui/Avatar.jsx';
 
 export default function UserMenu() {
-    const { user, isAdmin, logout } = useAuth();
+    const { user, isAdmin, logout } = useAuth();    
     const navigate = useNavigate();
     const { pathname } = useLocation();
     const ref = useRef(null);

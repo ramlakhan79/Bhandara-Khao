@@ -21,7 +21,7 @@ const linkClass = ({ isActive }) =>
 
 export default function Navbar() {
     const { t } = useTranslation();
-    const { user, loading } = useAuth();
+    const { user, isAdmin, loading } = useAuth();
     const { pathname } = useLocation();
     const [open, setOpen] = useState(false);
 
@@ -94,6 +94,7 @@ export default function Navbar() {
                             </NavLink>
                         ))}
                         {user && <NavLink to="/dashboard" className={linkClass}>{t('nav.dashboard')}</NavLink>}
+                        {isAdmin && <NavLink to="/admin" className={linkClass}>{t('nav.admin')}</NavLink>}
                     </nav>
                     <div className="mt-3 sm:hidden"><LanguageSwitcher /></div>
                     <div className="mt-4 flex flex-col gap-2">
