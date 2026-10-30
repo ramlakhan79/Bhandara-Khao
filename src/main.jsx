@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { registerSW } from 'virtual:pwa-register';
 import { useTranslation } from 'react-i18next';
+import './utils/pwaInstall.js';
 import './i18n/index.js';
 import App from './App.jsx';
 import { ThemeProvider } from './context/ThemeContext.jsx';

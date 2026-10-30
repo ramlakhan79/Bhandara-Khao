@@ -3,6 +3,7 @@ import { Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import Logo from './Logo.jsx';
 import { SITE } from '../utils/site.js';
+import InstallAppButton from './InstallAppButton.jsx';
 
 const socials = [
     { key: 'instagram', label: 'Instagram', icon: Instagram },
@@ -40,7 +41,10 @@ export default function Footer() {
                         </ul>
                     )}
                 </div>
-
+                <div className="mt-5">
+                    <p className="mb-2 text-sm font-semibold">{t('install.title', { defaultValue: 'Get the app' })}</p>
+                    <InstallAppButton />
+                </div>
                 <nav aria-label={t('footer.explore')} className={col}>
                     <h2 className="mb-1 font-bold">{t('footer.explore')}</h2>
                     <Link to="/bhandaras" className={a}>{t('footer.findLink')}</Link>
